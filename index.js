@@ -13,6 +13,10 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
+app.get('/', (req,res)=>{
+    res.send('hello to memories api')
+})
+
 const CONNECTION_URL= process.env.CONNECTION_URL
 const PORT = process.env.PORT || 5000;
 mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
